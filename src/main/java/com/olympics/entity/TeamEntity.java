@@ -15,5 +15,5 @@ public class TeamEntity {
     private String isCountry;
 
     @Id
-    private String team_name;
+    private String teamName;
 }
