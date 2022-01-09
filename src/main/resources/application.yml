@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/olympicsdb
+    username:
+    password:
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: false
+
+server:
+  port: 8084
+  error:
+    include-message: always
+
+jpa:
+  properties:
+    hibernate:
+      show_sql: false
