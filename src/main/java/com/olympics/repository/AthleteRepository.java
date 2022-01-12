@@ -14,11 +14,4 @@ public interface AthleteRepository extends JpaRepository<AthleteEntity, Integer>
             "on a.teamTeamName = t.teamName " +
             "where t.teamName = :team ")
     List<AthleteEntity> findByTeam(String team);
-
-//    @Query(value = "SELECT athlete.Athlete_Name " +
-//            "FROM athlete " +
-//            "JOIN team " +
-//            "ON athlete.Team_Team_Name = team.Team_Name " +
-//            "WHERE Team_Name = :team" , nativeQuery = true)
-//    List<AthleteEntity> findByTeamNative(String team);
 }

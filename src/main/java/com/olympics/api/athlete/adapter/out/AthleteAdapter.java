@@ -15,12 +15,6 @@ public class AthleteAdapter {
     private final EntityManager entityManager;
 
     public List<AthleteEntity> getAthletesByTeam(String team){
-//        return entityManager.createQuery("select a.athleteName " +
-//                "from AthleteEntity a" +
-//                "where a.teamTeamName = :team ")
-//                .setParameter("team", team)
-//                .getResultList();
-
         return athleteRepository.findByTeam(team);
     }
 }

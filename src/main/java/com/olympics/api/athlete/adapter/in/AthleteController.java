@@ -1,6 +1,6 @@
 package com.olympics.api.athlete.adapter.in;
 
-import com.olympics.api.athlete.application.AthleteSearchService;
+import com.olympics.api.athlete.application.AthleteService;
 import com.olympics.entity.AthleteEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,8 +12,8 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-public class AthleteSearchController {
-    private final AthleteSearchService athleteSearchService;
+public class AthleteController {
+    private final AthleteService athleteSearchService;
 
     @GetMapping("/athlete/{team}")
     @CrossOrigin("http://localhost:3000")

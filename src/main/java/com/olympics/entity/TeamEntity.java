@@ -1,18 +1,17 @@
 package com.olympics.entity;
 
+import com.olympics.entity.enums.IsCountryEnum;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "team")
 @Data
 public class TeamEntity {
-    @Column(name = "country")
-    private String isCountry;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "country",columnDefinition = "ENUM('yes','no')")
+    private IsCountryEnum isCountry;
 
     @Id
     private String teamName;

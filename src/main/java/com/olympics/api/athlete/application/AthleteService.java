@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
-public class AthleteSearchService {
+public class AthleteService {
     private final AthleteAdapter athleteAdapter;
 
     public List<AthleteEntity> getAthletesByTeam(String team){
