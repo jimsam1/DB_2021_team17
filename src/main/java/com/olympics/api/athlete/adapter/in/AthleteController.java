@@ -17,7 +17,9 @@ public class AthleteController {
 
     @GetMapping("/athlete/{team}")
     @CrossOrigin("http://localhost:3000")
+
     public List<AthleteEntity> getAthletesByTeam(@PathVariable(name = "team") String team) {
+        System.out.println(athleteSearchService.getAthletesByTeam(team).get(0));
         return athleteSearchService.getAthletesByTeam(team);
     }
 }
