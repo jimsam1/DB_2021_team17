@@ -1,8 +1,8 @@
 package com.olympics.api.sport.adapter.in;
 
-import com.olympics.api.athlete.application.AthleteService;
-import com.olympics.api.sport.adapter.in.dto.SportSearchRequest;
-import com.olympics.api.sport.adapter.in.dto.SportSearchResponse;
+import com.olympics.api.sport.adapter.in.dto.SportSearchBySponsorRequest;
+import com.olympics.api.sport.adapter.in.dto.SportSearchByStadiumAndDateRequest;
+import com.olympics.api.sport.adapter.in.dto.SportSearchByStadiumAndDateResponse;
 import com.olympics.api.sport.application.SportService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,10 +16,19 @@ public class SportController {
 
     @PostMapping("/sport/search")
     @CrossOrigin("http://localhost:3000")
-    public List<SportSearchResponse> sportSearch(@RequestBody SportSearchRequest request){
+    public List<SportSearchByStadiumAndDateResponse> sportSearchByStadiumAndDate(@RequestBody SportSearchByStadiumAndDateRequest request){
 
         System.out.println("Reached here");
-        System.out.println(sportService.sportSearch(request));
-        return sportService.sportSearch(request);
+        System.out.println(sportService.sportSearchByStadiumAndDate(request));
+        return sportService.sportSearchByStadiumAndDate(request);
+    }
+
+    @PostMapping("/sport/search-by-sponsor")
+    @CrossOrigin("http://localhost:3000")
+    public List<String> sportSearchBySponsor(@RequestBody SportSearchBySponsorRequest request){
+
+        System.out.println("Reached here");
+        System.out.println(sportService.sportSearchBySponsor(request));
+        return sportService.sportSearchBySponsor(request);
     }
 }

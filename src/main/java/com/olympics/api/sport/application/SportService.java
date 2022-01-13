@@ -1,7 +1,9 @@
 package com.olympics.api.sport.application;
 
-import com.olympics.api.sport.adapter.in.dto.SportSearchRequest;
-import com.olympics.api.sport.adapter.in.dto.SportSearchResponse;
+import com.olympics.api.sport.adapter.in.dto.SportSearchBySponsorRequest;
+import com.olympics.api.sport.adapter.in.dto.SportSearchBySponsorResponse;
+import com.olympics.api.sport.adapter.in.dto.SportSearchByStadiumAndDateRequest;
+import com.olympics.api.sport.adapter.in.dto.SportSearchByStadiumAndDateResponse;
 import com.olympics.api.sport.adapter.out.SportAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +15,11 @@ import java.util.List;
 public class SportService {
     private final SportAdapter sportAdapter;
 
-    public List<SportSearchResponse> sportSearch(SportSearchRequest request){
-        return sportAdapter.sportSearch(request);
+    public List<SportSearchByStadiumAndDateResponse> sportSearchByStadiumAndDate(SportSearchByStadiumAndDateRequest request){
+        return sportAdapter.sportSearchByStadiumAndDate(request);
+    }
+
+    public List<String> sportSearchBySponsor(SportSearchBySponsorRequest request){
+        return sportAdapter.sportSearchBySponsor(request);
     }
 }

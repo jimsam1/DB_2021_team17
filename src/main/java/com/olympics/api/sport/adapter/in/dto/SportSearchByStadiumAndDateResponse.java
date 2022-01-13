@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class SportSearchResponse {
+public class SportSearchByStadiumAndDateResponse {
     private String sportName;
 
     private String stadiumName;
